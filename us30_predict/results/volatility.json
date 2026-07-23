@@ -1,0 +1,140 @@
+{
+  "target": "next_60min_realized_volatility (std of 1-min log returns, causal)",
+  "timeframe": "15min",
+  "horizon_min": 60,
+  "n_samples": 28540,
+  "n_oos_samples": 24463,
+  "n_walk_forward_folds": 6,
+  "target_mean": 0.0001895461288901099,
+  "target_std": 0.00015585223243180977,
+  "features_used": [
+    "rv_15m",
+    "rv_30m",
+    "rv_60m",
+    "rv_120m",
+    "rv_240m",
+    "ret_15m",
+    "abs_ret_15m",
+    "mean_absret_60m",
+    "mean_absret_240m",
+    "atr_14",
+    "atr_pct",
+    "range_15m",
+    "range_mean_60m",
+    "range_mean_240m",
+    "range_max_60m",
+    "range_max_240m",
+    "range_ratio_60_240",
+    "rv_ratio_60_240",
+    "hour_ny",
+    "minute_ny",
+    "dow"
+  ],
+  "walk_forward": {
+    "model": {
+      "r2": 0.5366275735304481,
+      "mae": 4.889497529381043e-05
+    },
+    "baseline_persistence": {
+      "r2": 0.08257986320406385,
+      "mae": 6.77830847088376e-05
+    },
+    "baseline_trailing_mean": {
+      "r2": -0.035355495275259496,
+      "mae": 0.00010496081706236414
+    },
+    "model_improvement_over_persistence_r2": 0.45404771032638425,
+    "per_fold": [
+      {
+        "fold": 1,
+        "train_end": 4077,
+        "test_start": 4077,
+        "test_end": 8154,
+        "n_test": 4077,
+        "model_r2": 0.4519904625841362
+      },
+      {
+        "fold": 2,
+        "train_end": 8154,
+        "test_start": 8154,
+        "test_end": 12231,
+        "n_test": 4077,
+        "model_r2": 0.6439896494098756
+      },
+      {
+        "fold": 3,
+        "train_end": 12231,
+        "test_start": 12231,
+        "test_end": 16308,
+        "n_test": 4077,
+        "model_r2": 0.76048906550836
+      },
+      {
+        "fold": 4,
+        "train_end": 16308,
+        "test_start": 16308,
+        "test_end": 20385,
+        "n_test": 4077,
+        "model_r2": 0.5743938787631542
+      },
+      {
+        "fold": 5,
+        "train_end": 20385,
+        "test_start": 20385,
+        "test_end": 24462,
+        "n_test": 4077,
+        "model_r2": 0.3332680843021165
+      },
+      {
+        "fold": 6,
+        "train_end": 24462,
+        "test_start": 24462,
+        "test_end": 28540,
+        "n_test": 4078,
+        "model_r2": 0.6418019536060464
+      }
+    ]
+  },
+  "feature_importances_top10": [
+    {
+      "feature": "hour_ny",
+      "importance": 1968
+    },
+    {
+      "feature": "range_max_240m",
+      "importance": 814
+    },
+    {
+      "feature": "range_mean_240m",
+      "importance": 700
+    },
+    {
+      "feature": "atr_14",
+      "importance": 627
+    },
+    {
+      "feature": "rv_30m",
+      "importance": 579
+    },
+    {
+      "feature": "mean_absret_240m",
+      "importance": 549
+    },
+    {
+      "feature": "range_max_60m",
+      "importance": 534
+    },
+    {
+      "feature": "dow",
+      "importance": 517
+    },
+    {
+      "feature": "range_ratio_60_240",
+      "importance": 515
+    },
+    {
+      "feature": "mean_absret_60m",
+      "importance": 498
+    }
+  ]
+}
