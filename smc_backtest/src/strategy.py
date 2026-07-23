@@ -70,9 +70,13 @@ class Trade:
 
 
 class SMCStrategy:
-    def __init__(self, df: pd.DataFrame, p: Params):
+    def __init__(self, df: pd.DataFrame, p: Params, htf_bias: np.ndarray | None = None):
+        """`htf_bias`: optional per-bar array of {+1,-1,0} from higher timeframes
+        (see mtf.htf_bias_for_base). When given it REPLACES the single-timeframe
+        bias, turning the engine into a true top-down MTF cascade."""
         self.df = df.reset_index(drop=True)
         self.p = p
+        self.htf_bias = htf_bias
         self.o = self.df["open"].to_numpy(float)
         self.h = self.df["high"].to_numpy(float)
         self.l = self.df["low"].to_numpy(float)
@@ -126,11 +130,17 @@ class SMCStrategy:
             for s in int_by_confirm.get(t, []):
                 (int_highs if s.kind == "H" else int_lows).append((s.pivot_idx, s.price))
 
-            # update HTF bias via close-based break of the last major swing (BOS/CHoCH)
+            # update bias via close-based break of the last major swing (BOS/CHoCH)
             if last_major_high and self.c[t] > last_major_high[1]:
                 bias = "bull"
             if last_major_low and self.c[t] < last_major_low[1]:
                 bias = "bear"
+
+            # if a true multi-timeframe bias is supplied, it OVERRIDES the
+            # single-timeframe bias (top-down cascade: W1/D1/H4 -> H1 entry)
+            if self.htf_bias is not None:
+                hb = self.htf_bias[t]
+                bias = "bull" if hb == 1 else "bear" if hb == -1 else None
 
             # dealing range / equilibrium from the most recent major high & low
             eq = None
