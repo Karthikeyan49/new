@@ -25,7 +25,7 @@ Status keys: [ ] todo · [~] in progress · [x] done
 - [x] **5. Statistical significance.** Permutation / bootstrap test on the
   analyst's R distribution vs random-entry; report p-value and confidence
   interval. Save `results/significance.json`. Reality check on any apparent edge.
-- [ ] **6. Regime-conditional analyst tuning.** Measure analyst performance by
+- [~] **6. Regime-conditional analyst tuning.** Measure analyst performance by
   session/regime; adapt confidence thresholds; re-evaluate. Document what adapts.
 - [ ] **7. LLM-backend reasoning demo.** On ~20 sampled snapshots, produce full
   natural-language analyst reasoning (thesis/confidence/invalidation) and save
