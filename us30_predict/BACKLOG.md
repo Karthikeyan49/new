@@ -27,7 +27,7 @@ Status keys: [ ] todo · [~] in progress · [x] done
   interval. Save `results/significance.json`. Reality check on any apparent edge.
 - [x] **6. Regime-conditional analyst tuning.** Measure analyst performance by
   session/regime; adapt confidence thresholds; re-evaluate. Document what adapts.
-- [~] **7. LLM-backend reasoning demo.** On ~20 sampled snapshots, produce full
+- [x] **7. LLM-backend reasoning demo.** On ~20 sampled snapshots, produce full
   natural-language analyst reasoning (thesis/confidence/invalidation) and save
   transcripts to `results/llm_reasoning_samples.md` — shows the human-like output
   the pluggable LLM backend produces.
@@ -39,6 +39,7 @@ Status keys: [ ] todo · [~] in progress · [x] done
   direction), data span, and limitations.
 
 ## Log
+- #7 reasoning_demo.py — 20 human-like reasoning transcripts (10 trades / 10 abstentions, 2016->2026) showing the perceive->reason chain on real snapshots. -> results/llm_reasoning_samples.md
 - #9 README.md — full write-up: architecture (perceive->reason->replay->reflect), honest scorecard, 10.6y data, verdict (direction ~random/no edge, volatility R2 0.54).
 - #8 visualize.py — 4 dependency-free SVGs (equity curve ends -78.6R, flat calibration vs ~72% breakeven, 9/11 red years, volatility R2 0.54). -> results/*.svg
 - #6 regime_tune.py — best slice asia|normal +0.05R (n=41, thin); walk-forward adaptation did NOT generalize (OOS baseline -0.12R vs adapted -0.19R). No regime edge. -> results/regime_tune.json
