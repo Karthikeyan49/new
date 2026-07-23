@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='720' height='280' font-family='sans-serif'>
+<rect width='720' height='280' fill='white'/>
+<line x1='40' y1='40.0' x2='680' y2='40.0' stroke='#e5e7eb' stroke-width='1'/><line x1='40' y1='90.0' x2='680' y2='90.0' stroke='#e5e7eb' stroke-width='1'/><line x1='40' y1='140.0' x2='680' y2='140.0' stroke='#e5e7eb' stroke-width='1'/><line x1='40' y1='190.0' x2='680' y2='190.0' stroke='#e5e7eb' stroke-width='1'/><line x1='40' y1='240.0' x2='680' y2='240.0' stroke='#e5e7eb' stroke-width='1'/>
+<line x1='40' y1='194.2' x2='680' y2='194.2' stroke='#9ca3af' stroke-dasharray='4 4' stroke-width='1'/>
+<polyline fill='none' stroke='#1a9850' stroke-width='2' points='40.0,194.2 111.1,209.7 182.2,224.9 253.3,240.0 324.4,194.2 395.6,209.6 466.7,131.5 537.8,80.5 608.9,97.0 680.0,40.0'/>
+<text x='40' y='24' font-size='15' font-weight='600' fill='#111'>NIFTY_D1 equity (1% risk/trade)  return=10.01%</text>
+<text x='40' y='268' font-size='11' fill='#6b7280'>start 10000.00</text>
+<text x='680' y='268' font-size='11' fill='#6b7280' text-anchor='end'>end 11001.37</text>
+</svg>
