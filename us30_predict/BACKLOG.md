@@ -19,7 +19,7 @@ Status keys: [ ] todo · [~] in progress · [x] done
   predict next-60-min realized volatility / range from past features; walk-forward
   R²/MAE vs a naive "last vol" baseline. Save `results/volatility.json`. This is
   where genuine accuracy should appear.
-- [ ] **4. Meta-labeling filter.** Train a classifier on the analyst's setup
+- [x] **4. Meta-labeling filter.** Train a classifier on the analyst's setup
   features -> P(win); walk-forward; measure if filtering by it lifts confident
   hit-rate / PF. Save `results/meta_label.json`. No leakage (purged splits).
 - [x] **5. Statistical significance.** Permutation / bootstrap test on the
@@ -31,7 +31,7 @@ Status keys: [ ] todo · [~] in progress · [x] done
   natural-language analyst reasoning (thesis/confidence/invalidation) and save
   transcripts to `results/llm_reasoning_samples.md` — shows the human-like output
   the pluggable LLM backend produces.
-- [ ] **8. Visualizations.** Dependency-free SVGs: equity curve, calibration plot,
+- [~] **8. Visualizations.** Dependency-free SVGs: equity curve, calibration plot,
   per-regime hit-rate bars. Save under `results/`.
 - [ ] **9. Final report / README.** `us30_predict/README.md`: architecture (the
   perceive→reason→replay→reflect loop), how it thinks like a human analyst, the
@@ -39,6 +39,7 @@ Status keys: [ ] todo · [~] in progress · [x] done
   direction), data span, and limitations.
 
 ## Log
+- #4 meta_label.py — LightGBM take/skip filter, walk-forward 5 folds, OOS AUC=0.500 (chance) -> meta-labeling does NOT help; validated on synthetic (AUC 0.535 helps). No learnable signal in setup context. -> results/meta_label.json
 - #2 walkforward.py — 1500 snapshots/553 trades sliced by year/quarter/session/regime. Overall hit 59.9% but avg -0.14R, PF 0.67, cost-adjusted -78.6R; positive in only 2/11 years -> NO stable edge (noise). -> results/walkforward.json
 - #1 full replay — 800 decisions / 313 trades on 603k-bar span (Oct 2024-Jul 2026): hit-rate 51%, PF 0.66, cost-adjusted -36R. Direction ~random, loses after costs. -> results/scorecard_full.json
 - #3 volatility model — LightGBM, walk-forward OOS R2=0.54 (vs 0.08 persistence baseline), 6 folds / 24k OOS samples. Volatility IS predictable. -> results/volatility.json

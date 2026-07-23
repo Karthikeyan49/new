@@ -1,0 +1,161 @@
+{
+  "task": "meta-labeling filter (analyst picks side; model picks take/skip)",
+  "meta_label": "y=1 if outcome=='win' or (timeout with realized_R>0), else 0",
+  "features": {
+    "numeric": [
+      "atr_pct",
+      "ret_15m",
+      "ret_60m",
+      "confidence",
+      "in_killzone"
+    ],
+    "categorical": [
+      "session",
+      "vol_regime",
+      "pd_zone",
+      "recent_sweep",
+      "trend_15m",
+      "trend_1h",
+      "trend_4h",
+      "direction"
+    ]
+  },
+  "n_nonflat_setups": 553,
+  "walk_forward_folds_requested": 5,
+  "status": "ok",
+  "n_oos_trades": 461,
+  "n_walk_forward_folds": 5,
+  "oos_auc": 0.500037914691943,
+  "compare": {
+    "take_all_nonflat": {
+      "n_trades": 461,
+      "hit_rate": 0.4793926247288503,
+      "avg_R": -0.16045533888960123,
+      "profit_factor": 0.6425310276376962,
+      "profit_factor_note": null,
+      "cost_adjusted_total_R": -73.96991122810617
+    },
+    "take_filtered": {
+      "n_trades": 196,
+      "hit_rate": 0.5204081632653061,
+      "avg_R": -0.10998882436640524,
+      "profit_factor": 0.7292159946055965,
+      "profit_factor_note": null,
+      "cost_adjusted_total_R": -21.557809575815426
+    }
+  },
+  "improvement": {
+    "avg_R_delta": 0.05046651452319599,
+    "total_R_delta": 52.412101652290744,
+    "trades_kept": 196,
+    "trades_total": 461
+  },
+  "per_fold": [
+    {
+      "fold": 1,
+      "train_end": 92,
+      "test_start": 92,
+      "test_end": 184,
+      "n_train": 92,
+      "n_test": 92,
+      "threshold": 0.7525,
+      "n_taken": 15,
+      "test_auc": 0.5092548647365922
+    },
+    {
+      "fold": 2,
+      "train_end": 184,
+      "test_start": 184,
+      "test_end": 276,
+      "n_train": 184,
+      "n_test": 92,
+      "threshold": 0.6612,
+      "n_taken": 37,
+      "test_auc": 0.47684310018903586
+    },
+    {
+      "fold": 3,
+      "train_end": 276,
+      "test_start": 276,
+      "test_end": 368,
+      "n_train": 276,
+      "n_test": 92,
+      "threshold": 0.6282,
+      "n_taken": 46,
+      "test_auc": 0.45958871353419417
+    },
+    {
+      "fold": 4,
+      "train_end": 368,
+      "test_start": 368,
+      "test_end": 460,
+      "n_train": 368,
+      "n_test": 92,
+      "threshold": 0.611,
+      "n_taken": 42,
+      "test_auc": 0.4900568181818182
+    },
+    {
+      "fold": 5,
+      "train_end": 460,
+      "test_start": 460,
+      "test_end": 553,
+      "n_train": 460,
+      "n_test": 93,
+      "threshold": 0.5481,
+      "n_taken": 56,
+      "test_auc": 0.5772200772200772
+    }
+  ],
+  "feature_importances_top": [
+    {
+      "feature": "ret_15m",
+      "importance": 775
+    },
+    {
+      "feature": "atr_pct",
+      "importance": 756
+    },
+    {
+      "feature": "ret_60m",
+      "importance": 716
+    },
+    {
+      "feature": "trend_1h",
+      "importance": 165
+    },
+    {
+      "feature": "pd_zone",
+      "importance": 158
+    },
+    {
+      "feature": "trend_4h",
+      "importance": 132
+    },
+    {
+      "feature": "recent_sweep",
+      "importance": 90
+    },
+    {
+      "feature": "confidence",
+      "importance": 84
+    },
+    {
+      "feature": "in_killzone",
+      "importance": 51
+    },
+    {
+      "feature": "session",
+      "importance": 50
+    },
+    {
+      "feature": "vol_regime",
+      "importance": 50
+    },
+    {
+      "feature": "direction",
+      "importance": 30
+    }
+  ],
+  "verdict": "Meta-labeling does NOT help: OOS AUC 0.500 is ~0.5 (no real signal in the context features), and filtering fails to improve the cost-adjusted edge. Take-all is as good as filtering here."
+}
