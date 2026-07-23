@@ -1,0 +1,44 @@
+{
+  "n_snapshots": 120,
+  "n_trades": 43,
+  "abstain_rate": 0.6416666666666667,
+  "outcome_counts": {
+    "win": 22,
+    "loss": 19,
+    "timeout": 2,
+    "flat": 77
+  },
+  "hit_rate": 0.46511627906976744,
+  "confident_hit_rate": 0.4,
+  "confident_n": 5,
+  "avg_R": -0.35380057661693043,
+  "profit_factor": 0.3000998658004103,
+  "cost_adjusted_total_R": -15.213424794528008,
+  "calibration": {
+    "3-4": {
+      "n": 24,
+      "win_rate": 0.4166666666666667,
+      "avg_R": -0.48037974617962287
+    },
+    "5-6": {
+      "n": 14,
+      "win_rate": 0.5714285714285714,
+      "avg_R": -0.12200245209048864
+    },
+    "7-8": {
+      "n": 3,
+      "win_rate": 0.6666666666666666,
+      "avg_R": -0.30735369243199323
+    },
+    "9-10": {
+      "n": 2,
+      "win_rate": 0.0,
+      "avg_R": -0.527107739827116
+    }
+  },
+  "baselines": {
+    "random_direction_win_rate": 0.648411815168709,
+    "always_flat_total_R": 0.0,
+    "buy_and_hold_return": 0.059813564650817996
+  }
+}
