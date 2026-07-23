@@ -1,0 +1,541 @@
+{
+  "backlog_item": 6,
+  "title": "Regime-conditional analyst tuning",
+  "metrics_note": "realized_R is already net of round-trip spread; cost_adjusted_total_R is its sum. hit_rate = wins / n_trades (win = outcome 'win'). Slices under 30 trades are flagged 'insufficient n'.",
+  "regime_performance": {
+    "n_non_flat_trades": 553,
+    "min_regime_n": 30,
+    "overall": {
+      "n_trades": 553,
+      "hit_rate": 0.49909584086799275,
+      "avg_R": -0.1420752912859333,
+      "profit_factor": 0.6721565010809128,
+      "cost_adjusted_total_R": -78.56763608112111,
+      "insufficient_n": false
+    },
+    "dimensions": {
+      "session": {
+        "ny_pm": {
+          "n_trades": 80,
+          "hit_rate": 0.575,
+          "avg_R": -0.06962762397039905,
+          "profit_factor": 0.8485900792884112,
+          "cost_adjusted_total_R": -5.570209917631924,
+          "insufficient_n": false
+        },
+        "london": {
+          "n_trades": 87,
+          "hit_rate": 0.5517241379310345,
+          "avg_R": -0.10760215326631711,
+          "profit_factor": 0.726838080085584,
+          "cost_adjusted_total_R": -9.361387334169589,
+          "insufficient_n": false
+        },
+        "off": {
+          "n_trades": 201,
+          "hit_rate": 0.48756218905472637,
+          "avg_R": -0.1461218266284692,
+          "profit_factor": 0.6666647035108456,
+          "cost_adjusted_total_R": -29.37048715232231,
+          "insufficient_n": false
+        },
+        "asia": {
+          "n_trades": 103,
+          "hit_rate": 0.4077669902912621,
+          "avg_R": -0.1480998814457934,
+          "profit_factor": 0.6269430968375769,
+          "cost_adjusted_total_R": -15.254287788916718,
+          "insufficient_n": false
+        },
+        "ny_am": {
+          "n_trades": 82,
+          "hit_rate": 0.5121951219512195,
+          "avg_R": -0.23184468156195803,
+          "profit_factor": 0.5197902168635405,
+          "cost_adjusted_total_R": -19.01126388808056,
+          "insufficient_n": false
+        }
+      },
+      "vol_regime": {
+        "normal": {
+          "n_trades": 354,
+          "hit_rate": 0.5056497175141242,
+          "avg_R": -0.10729528408324743,
+          "profit_factor": 0.7554696440905041,
+          "cost_adjusted_total_R": -37.98253056546959,
+          "insufficient_n": false
+        },
+        "high": {
+          "n_trades": 28,
+          "hit_rate": 0.4642857142857143,
+          "avg_R": -0.19431194062346194,
+          "profit_factor": 0.5259096139149845,
+          "cost_adjusted_total_R": -5.440734337456934,
+          "insufficient_n": true
+        },
+        "low": {
+          "n_trades": 171,
+          "hit_rate": 0.49122807017543857,
+          "avg_R": -0.2055226384689742,
+          "profit_factor": 0.5175470556501205,
+          "cost_adjusted_total_R": -35.14437117819459,
+          "insufficient_n": false
+        }
+      },
+      "pd_zone": {
+        "discount": {
+          "n_trades": 223,
+          "hit_rate": 0.4977578475336323,
+          "avg_R": -0.12077370610756205,
+          "profit_factor": 0.7100153250607363,
+          "cost_adjusted_total_R": -26.932536461986338,
+          "insufficient_n": false
+        },
+        "premium": {
+          "n_trades": 291,
+          "hit_rate": 0.5085910652920962,
+          "avg_R": -0.15545715647606784,
+          "profit_factor": 0.6524201182686148,
+          "cost_adjusted_total_R": -45.23803253453574,
+          "insufficient_n": false
+        },
+        "equilibrium": {
+          "n_trades": 39,
+          "hit_rate": 0.4358974358974359,
+          "avg_R": -0.1640273611435645,
+          "profit_factor": 0.6151591113041768,
+          "cost_adjusted_total_R": -6.397067084599016,
+          "insufficient_n": false
+        }
+      },
+      "in_killzone": {
+        "0": {
+          "n_trades": 384,
+          "hit_rate": 0.484375,
+          "avg_R": -0.13071610640330977,
+          "profit_factor": 0.6972372950432869,
+          "cost_adjusted_total_R": -50.19498485887095,
+          "insufficient_n": false
+        },
+        "1": {
+          "n_trades": 169,
+          "hit_rate": 0.5325443786982249,
+          "avg_R": -0.1678855101908293,
+          "profit_factor": 0.6158588698864329,
+          "cost_adjusted_total_R": -28.372651222250155,
+          "insufficient_n": false
+        }
+      },
+      "session x vol_regime": {
+        "ny_am | high": {
+          "n_trades": 6,
+          "hit_rate": 0.6666666666666666,
+          "avg_R": 0.07180893287606727,
+          "profit_factor": 1.407547277791821,
+          "cost_adjusted_total_R": 0.4308535972564036,
+          "insufficient_n": true
+        },
+        "asia | normal": {
+          "n_trades": 41,
+          "hit_rate": 0.43902439024390244,
+          "avg_R": 0.05063072208631514,
+          "profit_factor": 1.1644061627826143,
+          "cost_adjusted_total_R": 2.0758596055389207,
+          "insufficient_n": false
+        },
+        "ny_pm | normal": {
+          "n_trades": 72,
+          "hit_rate": 0.5972222222222222,
+          "avg_R": -0.04031646234239535,
+          "profit_factor": 0.9126460030133217,
+          "cost_adjusted_total_R": -2.902785288652465,
+          "insufficient_n": false
+        },
+        "london | normal": {
+          "n_trades": 68,
+          "hit_rate": 0.5441176470588235,
+          "avg_R": -0.09272672568716447,
+          "profit_factor": 0.7559127263861686,
+          "cost_adjusted_total_R": -6.305417346727184,
+          "insufficient_n": false
+        },
+        "off | low": {
+          "n_trades": 77,
+          "hit_rate": 0.5974025974025974,
+          "avg_R": -0.11110397818373632,
+          "profit_factor": 0.6963735160991814,
+          "cost_adjusted_total_R": -8.555006320147697,
+          "insufficient_n": false
+        },
+        "london | low": {
+          "n_trades": 17,
+          "hit_rate": 0.5882352941176471,
+          "avg_R": -0.12073451382857776,
+          "profit_factor": 0.7206395433621811,
+          "cost_adjusted_total_R": -2.052486735085822,
+          "insufficient_n": true
+        },
+        "off | normal": {
+          "n_trades": 112,
+          "hit_rate": 0.41964285714285715,
+          "avg_R": -0.16620357838211897,
+          "profit_factor": 0.656334300956082,
+          "cost_adjusted_total_R": -18.614800778797324,
+          "insufficient_n": false
+        },
+        "off | high": {
+          "n_trades": 12,
+          "hit_rate": 0.4166666666666667,
+          "avg_R": -0.18339000444810802,
+          "profit_factor": 0.6185615674395796,
+          "cost_adjusted_total_R": -2.200680053377296,
+          "insufficient_n": true
+        },
+        "ny_am | normal": {
+          "n_trades": 61,
+          "hit_rate": 0.5573770491803278,
+          "avg_R": -0.2005801107677301,
+          "profit_factor": 0.584873503893969,
+          "cost_adjusted_total_R": -12.235386756831536,
+          "insufficient_n": false
+        },
+        "asia | low": {
+          "n_trades": 62,
+          "hit_rate": 0.3870967741935484,
+          "avg_R": -0.2795185063621877,
+          "profit_factor": 0.38683790308973764,
+          "cost_adjusted_total_R": -17.33014739445564,
+          "insufficient_n": false
+        },
+        "ny_pm | high": {
+          "n_trades": 8,
+          "hit_rate": 0.375,
+          "avg_R": -0.33342807862243223,
+          "profit_factor": 0.25047060322457837,
+          "cost_adjusted_total_R": -2.667424628979458,
+          "insufficient_n": true
+        },
+        "ny_am | low": {
+          "n_trades": 15,
+          "hit_rate": 0.26666666666666666,
+          "avg_R": -0.4804487152336953,
+          "profit_factor": 0.20441765720462368,
+          "cost_adjusted_total_R": -7.20673072850543,
+          "insufficient_n": true
+        },
+        "london | high": {
+          "n_trades": 2,
+          "hit_rate": 0.5,
+          "avg_R": -0.5017416261782923,
+          "profit_factor": 0.08000121123383595,
+          "cost_adjusted_total_R": -1.0034832523565846,
+          "insufficient_n": true
+        }
+      }
+    },
+    "ranking": [
+      {
+        "dimension": "session x vol_regime",
+        "regime": "asia | normal",
+        "n_trades": 41,
+        "avg_R": 0.05063072208631514,
+        "hit_rate": 0.43902439024390244,
+        "profit_factor": 1.1644061627826143,
+        "cost_adjusted_total_R": 2.0758596055389207
+      },
+      {
+        "dimension": "session x vol_regime",
+        "regime": "ny_pm | normal",
+        "n_trades": 72,
+        "avg_R": -0.04031646234239535,
+        "hit_rate": 0.5972222222222222,
+        "profit_factor": 0.9126460030133217,
+        "cost_adjusted_total_R": -2.902785288652465
+      },
+      {
+        "dimension": "session",
+        "regime": "ny_pm",
+        "n_trades": 80,
+        "avg_R": -0.06962762397039905,
+        "hit_rate": 0.575,
+        "profit_factor": 0.8485900792884112,
+        "cost_adjusted_total_R": -5.570209917631924
+      },
+      {
+        "dimension": "session x vol_regime",
+        "regime": "london | normal",
+        "n_trades": 68,
+        "avg_R": -0.09272672568716447,
+        "hit_rate": 0.5441176470588235,
+        "profit_factor": 0.7559127263861686,
+        "cost_adjusted_total_R": -6.305417346727184
+      },
+      {
+        "dimension": "vol_regime",
+        "regime": "normal",
+        "n_trades": 354,
+        "avg_R": -0.10729528408324743,
+        "hit_rate": 0.5056497175141242,
+        "profit_factor": 0.7554696440905041,
+        "cost_adjusted_total_R": -37.98253056546959
+      },
+      {
+        "dimension": "session",
+        "regime": "london",
+        "n_trades": 87,
+        "avg_R": -0.10760215326631711,
+        "hit_rate": 0.5517241379310345,
+        "profit_factor": 0.726838080085584,
+        "cost_adjusted_total_R": -9.361387334169589
+      },
+      {
+        "dimension": "session x vol_regime",
+        "regime": "off | low",
+        "n_trades": 77,
+        "avg_R": -0.11110397818373632,
+        "hit_rate": 0.5974025974025974,
+        "profit_factor": 0.6963735160991814,
+        "cost_adjusted_total_R": -8.555006320147697
+      },
+      {
+        "dimension": "pd_zone",
+        "regime": "discount",
+        "n_trades": 223,
+        "avg_R": -0.12077370610756205,
+        "hit_rate": 0.4977578475336323,
+        "profit_factor": 0.7100153250607363,
+        "cost_adjusted_total_R": -26.932536461986338
+      },
+      {
+        "dimension": "in_killzone",
+        "regime": "0",
+        "n_trades": 384,
+        "avg_R": -0.13071610640330977,
+        "hit_rate": 0.484375,
+        "profit_factor": 0.6972372950432869,
+        "cost_adjusted_total_R": -50.19498485887095
+      },
+      {
+        "dimension": "session",
+        "regime": "off",
+        "n_trades": 201,
+        "avg_R": -0.1461218266284692,
+        "hit_rate": 0.48756218905472637,
+        "profit_factor": 0.6666647035108456,
+        "cost_adjusted_total_R": -29.37048715232231
+      },
+      {
+        "dimension": "session",
+        "regime": "asia",
+        "n_trades": 103,
+        "avg_R": -0.1480998814457934,
+        "hit_rate": 0.4077669902912621,
+        "profit_factor": 0.6269430968375769,
+        "cost_adjusted_total_R": -15.254287788916718
+      },
+      {
+        "dimension": "pd_zone",
+        "regime": "premium",
+        "n_trades": 291,
+        "avg_R": -0.15545715647606784,
+        "hit_rate": 0.5085910652920962,
+        "profit_factor": 0.6524201182686148,
+        "cost_adjusted_total_R": -45.23803253453574
+      },
+      {
+        "dimension": "pd_zone",
+        "regime": "equilibrium",
+        "n_trades": 39,
+        "avg_R": -0.1640273611435645,
+        "hit_rate": 0.4358974358974359,
+        "profit_factor": 0.6151591113041768,
+        "cost_adjusted_total_R": -6.397067084599016
+      },
+      {
+        "dimension": "session x vol_regime",
+        "regime": "off | normal",
+        "n_trades": 112,
+        "avg_R": -0.16620357838211897,
+        "hit_rate": 0.41964285714285715,
+        "profit_factor": 0.656334300956082,
+        "cost_adjusted_total_R": -18.614800778797324
+      },
+      {
+        "dimension": "in_killzone",
+        "regime": "1",
+        "n_trades": 169,
+        "avg_R": -0.1678855101908293,
+        "hit_rate": 0.5325443786982249,
+        "profit_factor": 0.6158588698864329,
+        "cost_adjusted_total_R": -28.372651222250155
+      },
+      {
+        "dimension": "session x vol_regime",
+        "regime": "ny_am | normal",
+        "n_trades": 61,
+        "avg_R": -0.2005801107677301,
+        "hit_rate": 0.5573770491803278,
+        "profit_factor": 0.584873503893969,
+        "cost_adjusted_total_R": -12.235386756831536
+      },
+      {
+        "dimension": "vol_regime",
+        "regime": "low",
+        "n_trades": 171,
+        "avg_R": -0.2055226384689742,
+        "hit_rate": 0.49122807017543857,
+        "profit_factor": 0.5175470556501205,
+        "cost_adjusted_total_R": -35.14437117819459
+      },
+      {
+        "dimension": "session",
+        "regime": "ny_am",
+        "n_trades": 82,
+        "avg_R": -0.23184468156195803,
+        "hit_rate": 0.5121951219512195,
+        "profit_factor": 0.5197902168635405,
+        "cost_adjusted_total_R": -19.01126388808056
+      },
+      {
+        "dimension": "session x vol_regime",
+        "regime": "asia | low",
+        "n_trades": 62,
+        "avg_R": -0.2795185063621877,
+        "hit_rate": 0.3870967741935484,
+        "profit_factor": 0.38683790308973764,
+        "cost_adjusted_total_R": -17.33014739445564
+      }
+    ],
+    "n_regimes_ranked": 19
+  },
+  "adaptation": {
+    "min_oos_trades": 40,
+    "min_keep_frac": 0.15,
+    "conf_grid": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "status": "ok",
+    "split": {
+      "n_total": 553,
+      "n_in_sample": 276,
+      "n_out_of_sample": 277,
+      "in_sample_span": [
+        "2016-01-08 17:36:00+00:00",
+        "2021-11-09 09:37:00+00:00"
+      ],
+      "out_of_sample_span": [
+        "2021-11-11 01:07:00+00:00",
+        "2026-06-09 10:41:00+00:00"
+      ]
+    },
+    "candidate_rules": [
+      {
+        "name": "conf>=4",
+        "type": "confidence",
+        "params": {
+          "k": 4
+        },
+        "in_sample_keep_frac": 0.967391304347826,
+        "in_sample_avg_R": -0.1717559408049033,
+        "in_sample_n": 267,
+        "eligible": true
+      },
+      {
+        "name": "conf>=5",
+        "type": "confidence",
+        "params": {
+          "k": 5
+        },
+        "in_sample_keep_frac": 0.41304347826086957,
+        "in_sample_avg_R": -0.09521126641729354,
+        "in_sample_n": 114,
+        "eligible": true
+      },
+      {
+        "name": "conf>=6",
+        "type": "confidence",
+        "params": {
+          "k": 6
+        },
+        "in_sample_keep_frac": 0.15942028985507245,
+        "in_sample_avg_R": 0.126943070578482,
+        "in_sample_n": 44,
+        "eligible": true
+      },
+      {
+        "name": "conf>=7",
+        "type": "confidence",
+        "params": {
+          "k": 7
+        },
+        "in_sample_keep_frac": 0.10869565217391304,
+        "in_sample_avg_R": 0.2612278889454548,
+        "in_sample_n": 30,
+        "eligible": false
+      },
+      {
+        "name": "conf>=8",
+        "type": "confidence",
+        "params": {
+          "k": 8
+        },
+        "in_sample_keep_frac": 0.050724637681159424,
+        "in_sample_avg_R": 0.058945051830061566,
+        "in_sample_n": 14,
+        "eligible": false
+      }
+    ],
+    "chosen_rule": {
+      "name": "conf>=6",
+      "type": "confidence",
+      "params": {
+        "k": 6
+      },
+      "in_sample_avg_R": 0.126943070578482,
+      "in_sample_keep_frac": 0.15942028985507245,
+      "selection": "best in-sample avg_R among rules keeping >= 15% of trades"
+    },
+    "in_sample": {
+      "baseline": {
+        "n_trades": 276,
+        "hit_rate": 0.4927536231884058,
+        "avg_R": -0.16493191968180657,
+        "profit_factor": 0.6287849085238685,
+        "cost_adjusted_total_R": -45.52120983217861,
+        "insufficient_n": false
+      },
+      "adapted": {
+        "n_trades": 44,
+        "hit_rate": 0.6818181818181818,
+        "avg_R": 0.126943070578482,
+        "profit_factor": 1.4840992216774074,
+        "cost_adjusted_total_R": 5.585495105453208,
+        "insufficient_n": false
+      }
+    },
+    "out_of_sample": {
+      "baseline": {
+        "n_trades": 277,
+        "hit_rate": 0.5054151624548736,
+        "avg_R": -0.11930117779401622,
+        "profit_factor": 0.7176055859396966,
+        "cost_adjusted_total_R": -33.046426248942495,
+        "insufficient_n": false
+      },
+      "adapted": {
+        "n_trades": 60,
+        "hit_rate": 0.5,
+        "avg_R": -0.18492489039455914,
+        "profit_factor": 0.4849264863259956,
+        "cost_adjusted_total_R": -11.095493423673549,
+        "insufficient_n": false
+      }
+    },
+    "out_of_sample_reliable": true,
+    "verdict": "Out-of-sample: baseline avg -0.119R over 277 trades vs adapted avg -0.185R over 60 trades (delta -0.066R; total -33.0R -> -11.1R). Adaptation did NOT help out-of-sample \u2014 the in-sample regime advantage did not generalize. This is the expected result when trade direction is essentially random: per-regime avg_R rankings are small-sample noise that reshuffles in the next period."
+  }
+}
