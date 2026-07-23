@@ -89,6 +89,10 @@ python3 src/run_all.py
 # multi-timeframe cascade study (W1/D1/H4 bias -> H1 entry) + MTF_SUMMARY.md
 python3 src/run_mtf.py
 
+# intraday study on M15 / M1 (fetches + builds the intraday data first)
+python3 src/prep_intraday.py
+python3 src/run_intraday.py
+
 # single instrument
 python3 src/run.py --data data/EURUSD_H1.csv --name EURUSD_H1 --killzone
 python3 src/run.py --data data/NIFTY_D1.csv  --name NIFTY_D1 --min-rr 3 --poi fvg
@@ -106,6 +110,21 @@ Outputs per instrument in `results/`: `*_trades.csv`, `*_metrics.json`,
 | EUR/USD daily (2007–2020) | 32 | 9.4 | −0.61 | 0.33 | −18.0 |
 | EUR/USD 1h (6 mo, killzone) | 6 | 16.7 | −0.31 | 0.63 | −1.9 |
 | NIFTY 50 daily (2021–2026) | 9 | 44.4 | +1.09 | 2.97 | +10.0 |
+
+### Intraday — the timeframe SMC is built for (`results/INTRADAY_SUMMARY.md`)
+
+| Instrument | Variant | Trades | Win% | Profit Factor | Total R |
+|---|---|--:|--:|--:|--:|
+| EUR/USD 15m (2 mo) | baseline | 19 | 15.8 | 0.61 | −6.3 |
+| EUR/USD 15m (2 mo) | + MTF bias | 18 | 16.7 | 0.64 | −5.3 |
+| **Bank Nifty 1m (Jan 2024)** | **baseline** | **72** | **26.4** | **1.20** | **+10.4** |
+| Bank Nifty 1m (Jan 2024) | + MTF bias | 118 | 20.3 | 0.83 | −16.2 |
+
+Two honest findings: **(1)** SMC shows no edge on EUR/USD 15m here; **(2)** on
+**Bank Nifty 1-minute the baseline is positive over the largest sample in the
+study (72 trades, PF 1.20)** — but the multi-timeframe bias filter *hurt* it.
+So MTF is not universally good: it helped trending FX on H1 but degraded
+short-sample, mean-reverting index scalping. Filters must match the market.
 
 ### Multi-timeframe cascade (top-down bias → H1 entry, `results/MTF_SUMMARY.md`)
 

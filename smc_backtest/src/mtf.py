@@ -21,6 +21,9 @@ from structure import find_swings
 
 # timeframe -> its duration (for computing an HTF bar's close time)
 _TF_DELTA = {
+    "15min": pd.Timedelta(minutes=15),
+    "30min": pd.Timedelta(minutes=30),
+    "1h": pd.Timedelta(hours=1),
     "4h": pd.Timedelta(hours=4),
     "1D": pd.Timedelta(days=1),
     "1W": pd.Timedelta(weeks=1),

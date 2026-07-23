@@ -73,10 +73,22 @@ def _load_yf_multiheader(path: str, tz: str) -> pd.DataFrame:
     return df[CANON]
 
 
+def _load_canonical(path: str) -> pd.DataFrame:
+    """Files already in canonical schema (header: timestamp,open,high,low,close,volume),
+    with tz-aware UTC ISO timestamps — as written by prep_intraday.py."""
+    df = pd.read_csv(path)
+    df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
+    for c in ["open", "high", "low", "close", "volume"]:
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+    return df[CANON]
+
+
 def _detect(path: str) -> str:
     with open(path, "r", encoding="utf-8", errors="replace") as fh:
         first = fh.readline().strip()
     head = first.split(",")[0].strip().lower()
+    if head == "timestamp":
+        return "canonical"
     if head in ("price", "date", "datetime") or "=" in first:
         return "yf"
     # MT4 first token looks like 2013.11.29
@@ -92,7 +104,12 @@ def load(path: str, source_tz: str = "UTC") -> pd.DataFrame:
     (MT4 broker feeds are typically UTC/GMT; the NIFTY file is naive daily).
     """
     kind = _detect(path)
-    df = _load_ohlcv(path, source_tz) if kind == "mt4" else _load_yf_multiheader(path, source_tz)
+    if kind == "canonical":
+        df = _load_canonical(path)
+    elif kind == "mt4":
+        df = _load_ohlcv(path, source_tz)
+    else:
+        df = _load_yf_multiheader(path, source_tz)
     df = df.dropna(subset=["open", "high", "low", "close"]).copy()
     df = df.sort_values("timestamp").drop_duplicates("timestamp").reset_index(drop=True)
     # Basic sanity: high is the max, low is the min of the bar.

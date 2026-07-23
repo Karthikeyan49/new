@@ -13,3 +13,14 @@ included here for reproducibility. Credit to the original uploaders.
 These are third-party retail exports, not tick-accurate broker feeds. Treat the
 absolute numbers as indicative; the point of the study is the *relative,
 parameter-stable* behaviour of the strategy, not a certified P&L.
+
+## Intraday datasets (built by `src/prep_intraday.py`)
+
+| File | Instrument | TF | Span | Source repo |
+|---|---|---|---|---|
+| `EURUSD_M15.csv` | EUR/USD | 15 min | 2017-01 → 2017-03 (3,895 bars) | `liamdasilva/ForexDMEC` → `DMForex/data/EURUSD15.csv` |
+| `BANKNIFTY_M1.csv` | Bank Nifty (spot) | 1 min | Jan 2024, 22 trading days (8,250 bars) | `Desi385/Strategy_Tested_data` → `trading/banknifty_spot*_01_2024.csv` |
+
+Bank Nifty timestamps are NSE (IST) localised to Asia/Kolkata then converted to
+UTC; EUR/USD 15m broker time is treated as UTC. `EURUSD_M15_raw.csv` is the
+untouched download kept for reproducibility.
