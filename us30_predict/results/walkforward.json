@@ -1,0 +1,680 @@
+{
+  "meta": {
+    "n_snapshots": 1500,
+    "n_trades": 553,
+    "abstain_rate": 0.6313333333333333,
+    "metric_defs": {
+      "hit_rate": "wins / (wins + losses); timeouts excluded from denominator",
+      "avg_R": "mean realized_R over non-flat trades",
+      "profit_factor": "gross win R / gross loss R (None if no losers)",
+      "cost_adjusted_total_R": "sum of realized_R over non-flat trades",
+      "abstain_rate": "flats / all rows in the slice"
+    }
+  },
+  "overall": {
+    "n_all": 1500,
+    "n_trades": 553,
+    "hit_rate": 0.5986984815618221,
+    "avg_R": -0.1420752912859333,
+    "profit_factor": 0.6721565010809128,
+    "cost_adjusted_total_R": -78.56763608112111,
+    "abstain_rate": 0.6313333333333333,
+    "n_snapshots": 1500
+  },
+  "breakdowns": {
+    "year": {
+      "2016": {
+        "n_all": 98,
+        "n_trades": 44,
+        "hit_rate": 0.675,
+        "avg_R": -0.03567042463042928,
+        "profit_factor": 0.9005897202834258,
+        "cost_adjusted_total_R": -1.5694986837388882,
+        "abstain_rate": 0.5510204081632653
+      },
+      "2017": {
+        "n_all": 98,
+        "n_trades": 32,
+        "hit_rate": 0.7692307692307693,
+        "avg_R": -0.09979735156477298,
+        "profit_factor": 0.710560470910116,
+        "cost_adjusted_total_R": -3.1935152500727355,
+        "abstain_rate": 0.673469387755102
+      },
+      "2018": {
+        "n_all": 140,
+        "n_trades": 45,
+        "hit_rate": 0.5405405405405406,
+        "avg_R": -0.12676555234993026,
+        "profit_factor": 0.7290172082395501,
+        "cost_adjusted_total_R": -5.704449855746861,
+        "abstain_rate": 0.6785714285714286
+      },
+      "2019": {
+        "n_all": 155,
+        "n_trades": 42,
+        "hit_rate": 0.7419354838709677,
+        "avg_R": 0.055046695265544704,
+        "profit_factor": 1.194621086328123,
+        "cost_adjusted_total_R": 2.3119612011528776,
+        "abstain_rate": 0.7290322580645161
+      },
+      "2020": {
+        "n_all": 156,
+        "n_trades": 68,
+        "hit_rate": 0.46774193548387094,
+        "avg_R": -0.4392185485222992,
+        "profit_factor": 0.2907627871272411,
+        "cost_adjusted_total_R": -29.866861299516344,
+        "abstain_rate": 0.5641025641025641
+      },
+      "2021": {
+        "n_all": 156,
+        "n_trades": 53,
+        "hit_rate": 0.55,
+        "avg_R": -0.16318799791463753,
+        "profit_factor": 0.6235001050731456,
+        "cost_adjusted_total_R": -8.64896388947579,
+        "abstain_rate": 0.6602564102564102
+      },
+      "2022": {
+        "n_all": 156,
+        "n_trades": 62,
+        "hit_rate": 0.5490196078431373,
+        "avg_R": -0.0997691261152857,
+        "profit_factor": 0.7799445038148332,
+        "cost_adjusted_total_R": -6.1856858191477135,
+        "abstain_rate": 0.6025641025641025
+      },
+      "2023": {
+        "n_all": 156,
+        "n_trades": 64,
+        "hit_rate": 0.5576923076923077,
+        "avg_R": -0.1900923382947995,
+        "profit_factor": 0.59687268527245,
+        "cost_adjusted_total_R": -12.165909650867167,
+        "abstain_rate": 0.5897435897435898
+      },
+      "2024": {
+        "n_all": 156,
+        "n_trades": 59,
+        "hit_rate": 0.5769230769230769,
+        "avg_R": -0.24531571784198583,
+        "profit_factor": 0.4761955083220434,
+        "cost_adjusted_total_R": -14.473627352677164,
+        "abstain_rate": 0.6217948717948718
+      },
+      "2025": {
+        "n_all": 155,
+        "n_trades": 59,
+        "hit_rate": 0.58,
+        "avg_R": -0.1306474902504965,
+        "profit_factor": 0.7164108285820435,
+        "cost_adjusted_total_R": -7.708201924779292,
+        "abstain_rate": 0.6193548387096774
+      },
+      "2026": {
+        "n_all": 74,
+        "n_trades": 25,
+        "hit_rate": 0.95,
+        "avg_R": 0.3454846577499185,
+        "profit_factor": 6.040173248536819,
+        "cost_adjusted_total_R": 8.637116443747962,
+        "abstain_rate": 0.6621621621621622
+      }
+    },
+    "quarter": {
+      "2016 | 1": {
+        "n_all": 23,
+        "n_trades": 10,
+        "hit_rate": 0.6666666666666666,
+        "avg_R": -0.07099832390529542,
+        "profit_factor": 0.791810563540534,
+        "cost_adjusted_total_R": -0.7099832390529542,
+        "abstain_rate": 0.5652173913043478
+      },
+      "2016 | 2": {
+        "n_all": 25,
+        "n_trades": 12,
+        "hit_rate": 0.7272727272727273,
+        "avg_R": -0.08632967838446524,
+        "profit_factor": 0.7413473573511785,
+        "cost_adjusted_total_R": -1.0359561406135829,
+        "abstain_rate": 0.52
+      },
+      "2016 | 3": {
+        "n_all": 26,
+        "n_trades": 10,
+        "hit_rate": 0.7777777777777778,
+        "avg_R": 0.1422937064448273,
+        "profit_factor": 1.6055827955953839,
+        "cost_adjusted_total_R": 1.422937064448273,
+        "abstain_rate": 0.6153846153846154
+      },
+      "2016 | 4": {
+        "n_all": 24,
+        "n_trades": 12,
+        "hit_rate": 0.5454545454545454,
+        "avg_R": -0.10387469737671869,
+        "profit_factor": 0.7930410684148115,
+        "cost_adjusted_total_R": -1.2464963685206243,
+        "abstain_rate": 0.5
+      },
+      "2017 | 1": {
+        "n_all": 25,
+        "n_trades": 8,
+        "hit_rate": 1.0,
+        "avg_R": 0.025729576897867645,
+        "profit_factor": 1.0700852625918769,
+        "cost_adjusted_total_R": 0.20583661518294116,
+        "abstain_rate": 0.68
+      },
+      "2017 | 2": {
+        "n_all": 24,
+        "n_trades": 7,
+        "hit_rate": 1.0,
+        "avg_R": 0.020519599990203023,
+        "profit_factor": 1.1667819802599362,
+        "cost_adjusted_total_R": 0.14363719993142116,
+        "abstain_rate": 0.7083333333333334
+      },
+      "2017 | 3": {
+        "n_all": 25,
+        "n_trades": 9,
+        "hit_rate": 0.25,
+        "avg_R": -0.7391981969341384,
+        "profit_factor": 0.08050679159367856,
+        "cost_adjusted_total_R": -6.652783772407245,
+        "abstain_rate": 0.64
+      },
+      "2017 | 4": {
+        "n_all": 24,
+        "n_trades": 8,
+        "hit_rate": 1.0,
+        "avg_R": 0.3887243384025184,
+        "profit_factor": null,
+        "cost_adjusted_total_R": 3.1097947072201473,
+        "abstain_rate": 0.6666666666666666
+      },
+      "2018 | 1": {
+        "n_all": 24,
+        "n_trades": 5,
+        "hit_rate": 0.5,
+        "avg_R": -0.1373196573681424,
+        "profit_factor": 0.6764921752249419,
+        "cost_adjusted_total_R": -0.6865982868407119,
+        "abstain_rate": 0.7916666666666666
+      },
+      "2018 | 2": {
+        "n_all": 37,
+        "n_trades": 13,
+        "hit_rate": 0.6363636363636364,
+        "avg_R": 0.15273888471964053,
+        "profit_factor": 1.4091331187302583,
+        "cost_adjusted_total_R": 1.9856055013553269,
+        "abstain_rate": 0.6486486486486487
+      },
+      "2018 | 3": {
+        "n_all": 39,
+        "n_trades": 16,
+        "hit_rate": 0.5384615384615384,
+        "avg_R": -0.31188604895211336,
+        "profit_factor": 0.3587324919103063,
+        "cost_adjusted_total_R": -4.990176783233814,
+        "abstain_rate": 0.5897435897435898
+      },
+      "2018 | 4": {
+        "n_all": 40,
+        "n_trades": 11,
+        "hit_rate": 0.4444444444444444,
+        "avg_R": -0.18302548063887825,
+        "profit_factor": 0.6801103617832468,
+        "cost_adjusted_total_R": -2.0132802870276607,
+        "abstain_rate": 0.725
+      },
+      "2019 | 1": {
+        "n_all": 38,
+        "n_trades": 14,
+        "hit_rate": 0.9090909090909091,
+        "avg_R": 0.3168611846604032,
+        "profit_factor": 3.10447331689931,
+        "cost_adjusted_total_R": 4.436056585245645,
+        "abstain_rate": 0.631578947368421
+      },
+      "2019 | 2": {
+        "n_all": 38,
+        "n_trades": 7,
+        "hit_rate": 0.5,
+        "avg_R": -0.31136057209469054,
+        "profit_factor": 0.38133211995229344,
+        "cost_adjusted_total_R": -2.179524004662834,
+        "abstain_rate": 0.8157894736842105
+      },
+      "2019 | 3": {
+        "n_all": 40,
+        "n_trades": 9,
+        "hit_rate": 0.625,
+        "avg_R": -0.01034411476462919,
+        "profit_factor": 0.9745668889705367,
+        "cost_adjusted_total_R": -0.09309703288166271,
+        "abstain_rate": 0.775
+      },
+      "2019 | 4": {
+        "n_all": 39,
+        "n_trades": 12,
+        "hit_rate": 0.75,
+        "avg_R": 0.012377137787644035,
+        "profit_factor": 1.0573905634902279,
+        "cost_adjusted_total_R": 0.1485256534517284,
+        "abstain_rate": 0.6923076923076923
+      },
+      "2020 | 1": {
+        "n_all": 38,
+        "n_trades": 13,
+        "hit_rate": 0.4166666666666667,
+        "avg_R": -0.3831927638926865,
+        "profit_factor": 0.3708929114320449,
+        "cost_adjusted_total_R": -4.981505930604925,
+        "abstain_rate": 0.6578947368421053
+      },
+      "2020 | 2": {
+        "n_all": 38,
+        "n_trades": 17,
+        "hit_rate": 0.625,
+        "avg_R": -0.32814771577276297,
+        "profit_factor": 0.3072198207549417,
+        "cost_adjusted_total_R": -5.578511168136971,
+        "abstain_rate": 0.5526315789473685
+      },
+      "2020 | 3": {
+        "n_all": 40,
+        "n_trades": 20,
+        "hit_rate": 0.3888888888888889,
+        "avg_R": -0.43662133484631765,
+        "profit_factor": 0.2892519685239589,
+        "cost_adjusted_total_R": -8.732426696926353,
+        "abstain_rate": 0.5
+      },
+      "2020 | 4": {
+        "n_all": 40,
+        "n_trades": 18,
+        "hit_rate": 0.4375,
+        "avg_R": -0.5874676391026719,
+        "profit_factor": 0.2367392893221589,
+        "cost_adjusted_total_R": -10.574417503848094,
+        "abstain_rate": 0.55
+      },
+      "2021 | 1": {
+        "n_all": 38,
+        "n_trades": 14,
+        "hit_rate": 0.6666666666666666,
+        "avg_R": 0.28157736676972184,
+        "profit_factor": 1.9750391727986734,
+        "cost_adjusted_total_R": 3.942083134776106,
+        "abstain_rate": 0.631578947368421
+      },
+      "2021 | 2": {
+        "n_all": 39,
+        "n_trades": 16,
+        "hit_rate": 0.38461538461538464,
+        "avg_R": -0.5397795573895219,
+        "profit_factor": 0.19102343643999772,
+        "cost_adjusted_total_R": -8.63647291823235,
+        "abstain_rate": 0.5897435897435898
+      },
+      "2021 | 3": {
+        "n_all": 40,
+        "n_trades": 10,
+        "hit_rate": 0.625,
+        "avg_R": -0.2508996093028157,
+        "profit_factor": 0.33314009044348614,
+        "cost_adjusted_total_R": -2.508996093028157,
+        "abstain_rate": 0.75
+      },
+      "2021 | 4": {
+        "n_all": 39,
+        "n_trades": 13,
+        "hit_rate": 0.6,
+        "avg_R": -0.11119830869164507,
+        "profit_factor": 0.6781036018944713,
+        "cost_adjusted_total_R": -1.445578012991386,
+        "abstain_rate": 0.6666666666666666
+      },
+      "2022 | 1": {
+        "n_all": 39,
+        "n_trades": 17,
+        "hit_rate": 0.6875,
+        "avg_R": 0.5352032711079415,
+        "profit_factor": 2.685170898157487,
+        "cost_adjusted_total_R": 9.098455608835007,
+        "abstain_rate": 0.5641025641025641
+      },
+      "2022 | 2": {
+        "n_all": 39,
+        "n_trades": 15,
+        "hit_rate": 0.5454545454545454,
+        "avg_R": -0.21849388766155817,
+        "profit_factor": 0.4842597027915688,
+        "cost_adjusted_total_R": -3.2774083149233726,
+        "abstain_rate": 0.6153846153846154
+      },
+      "2022 | 3": {
+        "n_all": 39,
+        "n_trades": 15,
+        "hit_rate": 0.5384615384615384,
+        "avg_R": -0.3673192331894853,
+        "profit_factor": 0.2640211041936386,
+        "cost_adjusted_total_R": -5.509788497842279,
+        "abstain_rate": 0.6153846153846154
+      },
+      "2022 | 4": {
+        "n_all": 39,
+        "n_trades": 15,
+        "hit_rate": 0.36363636363636365,
+        "avg_R": -0.4331296410144712,
+        "profit_factor": 0.2674900423829121,
+        "cost_adjusted_total_R": -6.4969446152170685,
+        "abstain_rate": 0.6153846153846154
+      },
+      "2023 | 1": {
+        "n_all": 39,
+        "n_trades": 22,
+        "hit_rate": 0.5882352941176471,
+        "avg_R": -0.04379940345569195,
+        "profit_factor": 0.8824399978202186,
+        "cost_adjusted_total_R": -0.963586876025223,
+        "abstain_rate": 0.4358974358974359
+      },
+      "2023 | 2": {
+        "n_all": 39,
+        "n_trades": 12,
+        "hit_rate": 0.75,
+        "avg_R": -0.23165233672267238,
+        "profit_factor": 0.4833415645419876,
+        "cost_adjusted_total_R": -2.7798280406720686,
+        "abstain_rate": 0.6923076923076923
+      },
+      "2023 | 3": {
+        "n_all": 39,
+        "n_trades": 16,
+        "hit_rate": 0.42857142857142855,
+        "avg_R": -0.28970704914759365,
+        "profit_factor": 0.5115513707547276,
+        "cost_adjusted_total_R": -4.6353127863614985,
+        "abstain_rate": 0.5897435897435898
+      },
+      "2023 | 4": {
+        "n_all": 39,
+        "n_trades": 14,
+        "hit_rate": 0.5384615384615384,
+        "avg_R": -0.2705129962720268,
+        "profit_factor": 0.46749470617191263,
+        "cost_adjusted_total_R": -3.787181947808375,
+        "abstain_rate": 0.6410256410256411
+      },
+      "2024 | 1": {
+        "n_all": 38,
+        "n_trades": 16,
+        "hit_rate": 0.42857142857142855,
+        "avg_R": -0.5198526846233112,
+        "profit_factor": 0.21304567871297558,
+        "cost_adjusted_total_R": -8.31764295397298,
+        "abstain_rate": 0.5789473684210527
+      },
+      "2024 | 2": {
+        "n_all": 39,
+        "n_trades": 11,
+        "hit_rate": 0.5,
+        "avg_R": -0.35567399032605157,
+        "profit_factor": 0.31619577514037966,
+        "cost_adjusted_total_R": -3.9124138935865673,
+        "abstain_rate": 0.717948717948718
+      },
+      "2024 | 3": {
+        "n_all": 39,
+        "n_trades": 15,
+        "hit_rate": 0.7142857142857143,
+        "avg_R": -0.24865228064784026,
+        "profit_factor": 0.2521397745096203,
+        "cost_adjusted_total_R": -3.7297842097176037,
+        "abstain_rate": 0.6153846153846154
+      },
+      "2024 | 4": {
+        "n_all": 40,
+        "n_trades": 17,
+        "hit_rate": 0.6428571428571429,
+        "avg_R": 0.08742433556470516,
+        "profit_factor": 1.2339200904664782,
+        "cost_adjusted_total_R": 1.4862137045999877,
+        "abstain_rate": 0.575
+      },
+      "2025 | 1": {
+        "n_all": 38,
+        "n_trades": 14,
+        "hit_rate": 0.75,
+        "avg_R": 0.6192217740101664,
+        "profit_factor": 3.634015192744312,
+        "cost_adjusted_total_R": 8.66910483614233,
+        "abstain_rate": 0.631578947368421
+      },
+      "2025 | 2": {
+        "n_all": 38,
+        "n_trades": 13,
+        "hit_rate": 0.45454545454545453,
+        "avg_R": -0.5854855680594938,
+        "profit_factor": 0.24783427570749167,
+        "cost_adjusted_total_R": -7.61131238477342,
+        "abstain_rate": 0.6578947368421053
+      },
+      "2025 | 3": {
+        "n_all": 40,
+        "n_trades": 14,
+        "hit_rate": 0.38461538461538464,
+        "avg_R": -0.5941316297818828,
+        "profit_factor": 0.08397995869020125,
+        "cost_adjusted_total_R": -8.31784281694636,
+        "abstain_rate": 0.65
+      },
+      "2025 | 4": {
+        "n_all": 39,
+        "n_trades": 18,
+        "hit_rate": 0.7142857142857143,
+        "avg_R": -0.02489730884454676,
+        "profit_factor": 0.9044463294571324,
+        "cost_adjusted_total_R": -0.4481515592018417,
+        "abstain_rate": 0.5384615384615384
+      },
+      "2026 | 1": {
+        "n_all": 38,
+        "n_trades": 15,
+        "hit_rate": 0.9166666666666666,
+        "avg_R": 0.33015433994927396,
+        "profit_factor": 4.015262024417023,
+        "cost_adjusted_total_R": 4.952315099239109,
+        "abstain_rate": 0.6052631578947368
+      },
+      "2026 | 2": {
+        "n_all": 36,
+        "n_trades": 10,
+        "hit_rate": 1.0,
+        "avg_R": 0.3684801344508852,
+        "profit_factor": 52.72485441283441,
+        "cost_adjusted_total_R": 3.684801344508852,
+        "abstain_rate": 0.7222222222222222
+      }
+    },
+    "session": {
+      "asia": {
+        "n_all": 234,
+        "n_trades": 103,
+        "hit_rate": 0.5833333333333334,
+        "avg_R": -0.1480998814457934,
+        "profit_factor": 0.6269430968375769,
+        "cost_adjusted_total_R": -15.254287788916718,
+        "abstain_rate": 0.5598290598290598
+      },
+      "london": {
+        "n_all": 225,
+        "n_trades": 87,
+        "hit_rate": 0.6233766233766234,
+        "avg_R": -0.10760215326631711,
+        "profit_factor": 0.726838080085584,
+        "cost_adjusted_total_R": -9.361387334169589,
+        "abstain_rate": 0.6133333333333333
+      },
+      "ny_am": {
+        "n_all": 296,
+        "n_trades": 82,
+        "hit_rate": 0.5753424657534246,
+        "avg_R": -0.23184468156195803,
+        "profit_factor": 0.5197902168635405,
+        "cost_adjusted_total_R": -19.01126388808056,
+        "abstain_rate": 0.722972972972973
+      },
+      "ny_pm": {
+        "n_all": 228,
+        "n_trades": 80,
+        "hit_rate": 0.6301369863013698,
+        "avg_R": -0.06962762397039905,
+        "profit_factor": 0.8485900792884112,
+        "cost_adjusted_total_R": -5.570209917631924,
+        "abstain_rate": 0.6491228070175439
+      },
+      "off": {
+        "n_all": 517,
+        "n_trades": 201,
+        "hit_rate": 0.5903614457831325,
+        "avg_R": -0.1461218266284692,
+        "profit_factor": 0.6666647035108456,
+        "cost_adjusted_total_R": -29.37048715232231,
+        "abstain_rate": 0.6112185686653772
+      }
+    },
+    "vol_regime": {
+      "high": {
+        "n_all": 404,
+        "n_trades": 28,
+        "hit_rate": 0.5652173913043478,
+        "avg_R": -0.19431194062346194,
+        "profit_factor": 0.5259096139149845,
+        "cost_adjusted_total_R": -5.440734337456934,
+        "abstain_rate": 0.9306930693069307
+      },
+      "low": {
+        "n_all": 331,
+        "n_trades": 171,
+        "hit_rate": 0.5915492957746479,
+        "avg_R": -0.2055226384689742,
+        "profit_factor": 0.5175470556501205,
+        "cost_adjusted_total_R": -35.14437117819459,
+        "abstain_rate": 0.48338368580060426
+      },
+      "normal": {
+        "n_all": 765,
+        "n_trades": 354,
+        "hit_rate": 0.6047297297297297,
+        "avg_R": -0.10729528408324743,
+        "profit_factor": 0.7554696440905041,
+        "cost_adjusted_total_R": -37.98253056546959,
+        "abstain_rate": 0.5372549019607843
+      }
+    },
+    "pd_zone": {
+      "discount": {
+        "n_all": 617,
+        "n_trades": 223,
+        "hit_rate": 0.5935828877005348,
+        "avg_R": -0.12077370610756205,
+        "profit_factor": 0.7100153250607363,
+        "cost_adjusted_total_R": -26.932536461986338,
+        "abstain_rate": 0.6385737439222042
+      },
+      "equilibrium": {
+        "n_all": 125,
+        "n_trades": 39,
+        "hit_rate": 0.5483870967741935,
+        "avg_R": -0.1640273611435645,
+        "profit_factor": 0.6151591113041768,
+        "cost_adjusted_total_R": -6.397067084599016,
+        "abstain_rate": 0.688
+      },
+      "premium": {
+        "n_all": 758,
+        "n_trades": 291,
+        "hit_rate": 0.6090534979423868,
+        "avg_R": -0.15545715647606784,
+        "profit_factor": 0.6524201182686148,
+        "cost_adjusted_total_R": -45.23803253453574,
+        "abstain_rate": 0.6160949868073878
+      }
+    },
+    "in_killzone": {
+      "0": {
+        "n_all": 979,
+        "n_trades": 384,
+        "hit_rate": 0.5980707395498392,
+        "avg_R": -0.13071610640330977,
+        "profit_factor": 0.6972372950432869,
+        "cost_adjusted_total_R": -50.19498485887095,
+        "abstain_rate": 0.6077630234933605
+      },
+      "1": {
+        "n_all": 521,
+        "n_trades": 169,
+        "hit_rate": 0.6,
+        "avg_R": -0.1678855101908293,
+        "profit_factor": 0.6158588698864329,
+        "cost_adjusted_total_R": -28.372651222250155,
+        "abstain_rate": 0.6756238003838771
+      }
+    },
+    "confidence_bucket": {
+      "0-2": {
+        "n_all": 947,
+        "n_trades": 0,
+        "hit_rate": null,
+        "avg_R": null,
+        "profit_factor": null,
+        "cost_adjusted_total_R": 0.0,
+        "abstain_rate": 1.0
+      },
+      "3-4": {
+        "n_all": 317,
+        "n_trades": 317,
+        "hit_rate": 0.5852713178294574,
+        "avg_R": -0.14293005324300814,
+        "profit_factor": 0.6804184222190126,
+        "cost_adjusted_total_R": -45.308826878033585,
+        "abstain_rate": 0.0
+      },
+      "5-6": {
+        "n_all": 176,
+        "n_trades": 176,
+        "hit_rate": 0.5855263157894737,
+        "avg_R": -0.1789585681466171,
+        "profit_factor": 0.6067630084461488,
+        "cost_adjusted_total_R": -31.49670799380461,
+        "abstain_rate": 0.0
+      },
+      "7-8": {
+        "n_all": 53,
+        "n_trades": 53,
+        "hit_rate": 0.6739130434782609,
+        "avg_R": -0.043822208138700275,
+        "profit_factor": 0.8669683205314732,
+        "cost_adjusted_total_R": -2.3225770313511145,
+        "abstain_rate": 0.0
+      },
+      "9-10": {
+        "n_all": 7,
+        "n_trades": 7,
+        "hit_rate": 1.0,
+        "avg_R": 0.08006797458117076,
+        "profit_factor": 2.7540350044593587,
+        "cost_adjusted_total_R": 0.5604758220681954,
+        "abstain_rate": 0.0
+      }
+    }
+  },
+  "stability": "Overall across 553 trades: hit-rate 59.9%, avg -0.142R, cost-adjusted total -78.6R. Yearly cost-adjusted R is positive in 2/11 years (2019, 2026) and negative in 9. Quarter signs flip 13 positive / 29 negative. VERDICT: no stable edge. Direction performance is essentially noise around a coin-flip and net cost-adjusted R is not reliably positive. Any single good slice is most plausibly luck, not skill \u2014 do not trade the direction call on this."
+}

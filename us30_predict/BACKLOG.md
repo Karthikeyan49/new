@@ -12,7 +12,7 @@ Status keys: [ ] todo · [~] in progress · [x] done
 
 - [x] **1. Full-dataset replay.** Run `src/run_agent.py` on the ENTIRE downloaded
   1-min history with dense sampling (step 15). Save `results/scorecard_full.json`.
-- [ ] **2. Walk-forward by period & regime.** Split by year/quarter and by
+- [x] **2. Walk-forward by period & regime.** Split by year/quarter and by
   vol_regime/session; report per-slice hit-rate, PF, avg R. Save
   `results/walkforward.json`. Shows whether any edge is stable or noise.
 - [x] **3. Volatility & range model (the predictable target).** Train LightGBM to
@@ -39,6 +39,7 @@ Status keys: [ ] todo · [~] in progress · [x] done
   direction), data span, and limitations.
 
 ## Log
+- #2 walkforward.py — 1500 snapshots/553 trades sliced by year/quarter/session/regime. Overall hit 59.9% but avg -0.14R, PF 0.67, cost-adjusted -78.6R; positive in only 2/11 years -> NO stable edge (noise). -> results/walkforward.json
 - #1 full replay — 800 decisions / 313 trades on 603k-bar span (Oct 2024-Jul 2026): hit-rate 51%, PF 0.66, cost-adjusted -36R. Direction ~random, loses after costs. -> results/scorecard_full.json
 - #3 volatility model — LightGBM, walk-forward OOS R2=0.54 (vs 0.08 persistence baseline), 6 folds / 24k OOS samples. Volatility IS predictable. -> results/volatility.json
 - #5 significance.py — bootstrap + sign-flip permutation test; correctly distinguishes edge vs noise; real scorecard (n=43) mean R -0.35, p=0.134 -> NOT significant (no proven direction edge).
