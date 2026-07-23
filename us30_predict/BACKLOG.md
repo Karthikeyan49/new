@@ -10,19 +10,19 @@ Status keys: [ ] todo · [~] in progress · [x] done
 
 ## Priority queue
 
-- [ ] **1. Full-dataset replay.** Run `src/run_agent.py` on the ENTIRE downloaded
+- [~] **1. Full-dataset replay.** Run `src/run_agent.py` on the ENTIRE downloaded
   1-min history with dense sampling (step 15). Save `results/scorecard_full.json`.
 - [ ] **2. Walk-forward by period & regime.** Split by year/quarter and by
   vol_regime/session; report per-slice hit-rate, PF, avg R. Save
   `results/walkforward.json`. Shows whether any edge is stable or noise.
-- [ ] **3. Volatility & range model (the predictable target).** Train LightGBM to
+- [~] **3. Volatility & range model (the predictable target).** Train LightGBM to
   predict next-60-min realized volatility / range from past features; walk-forward
   R²/MAE vs a naive "last vol" baseline. Save `results/volatility.json`. This is
   where genuine accuracy should appear.
 - [ ] **4. Meta-labeling filter.** Train a classifier on the analyst's setup
   features -> P(win); walk-forward; measure if filtering by it lifts confident
   hit-rate / PF. Save `results/meta_label.json`. No leakage (purged splits).
-- [ ] **5. Statistical significance.** Permutation / bootstrap test on the
+- [~] **5. Statistical significance.** Permutation / bootstrap test on the
   analyst's R distribution vs random-entry; report p-value and confidence
   interval. Save `results/significance.json`. Reality check on any apparent edge.
 - [ ] **6. Regime-conditional analyst tuning.** Measure analyst performance by
