@@ -1,0 +1,56 @@
+{
+  "scipy_available": true,
+  "synthetic": {
+    "no_edge": {
+      "n_trades": 200,
+      "mean_R": -0.025,
+      "ci95": [
+        -0.22,
+        0.17
+      ],
+      "frac_mean_gt_0": 0.403,
+      "p_value": 0.8387161283871613,
+      "sharpe_like": -0.01774748130724105,
+      "annualized_note": "sharpe (per-trade) = -0.018; annualised-ish ~ -0.28 if ~252 trades/yr (x sqrt(N)) \u2014 indicative only",
+      "label": "NOT SIGNIFICANT",
+      "verdict": "n=200, mean R -0.03, 95% CI [-0.22, +0.17], p=0.839, sharpe -0.02 -> NOT significant / consistent with no edge",
+      "alpha": 0.05,
+      "scipy_ttest_p": 0.80208290387059
+    },
+    "real_edge": {
+      "n_trades": 200,
+      "mean_R": 0.395,
+      "ci95": [
+        0.2,
+        0.605
+      ],
+      "frac_mean_gt_0": 1.0,
+      "p_value": 0.00039996000399960006,
+      "sharpe_like": 0.2633201014998786,
+      "annualized_note": "sharpe (per-trade) = +0.263; annualised-ish ~ +4.18 if ~252 trades/yr (x sqrt(N)) \u2014 indicative only",
+      "label": "REAL EDGE",
+      "verdict": "n=200, mean R +0.40, 95% CI [+0.20, +0.60], p=0.000, sharpe +0.26 -> SIGNIFICANT positive edge",
+      "alpha": 0.05,
+      "scipy_ttest_p": 0.0002553821945697034
+    },
+    "distinguishes_correctly": true
+  },
+  "scorecard_source": "results/scorecard.json",
+  "scorecard_reconstructed_R": true,
+  "scorecard_assessment": {
+    "n_trades": 43,
+    "mean_R": -0.3538005766169304,
+    "ci95": [
+      -0.7933354603378608,
+      0.07893198152260197
+    ],
+    "frac_mean_gt_0": 0.0519,
+    "p_value": 0.1337866213378662,
+    "sharpe_like": -0.23812450774763932,
+    "annualized_note": "sharpe (per-trade) = -0.238; annualised-ish ~ -3.78 if ~252 trades/yr (x sqrt(N)) \u2014 indicative only",
+    "label": "NOT SIGNIFICANT",
+    "verdict": "n=43, mean R -0.35, 95% CI [-0.79, +0.08], p=0.134, sharpe -0.24 -> NOT significant / consistent with no edge",
+    "alpha": 0.05,
+    "scipy_ttest_p": 0.12591328820681932
+  }
+}

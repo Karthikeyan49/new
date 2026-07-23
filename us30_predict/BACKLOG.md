@@ -22,7 +22,7 @@ Status keys: [ ] todo · [~] in progress · [x] done
 - [ ] **4. Meta-labeling filter.** Train a classifier on the analyst's setup
   features -> P(win); walk-forward; measure if filtering by it lifts confident
   hit-rate / PF. Save `results/meta_label.json`. No leakage (purged splits).
-- [~] **5. Statistical significance.** Permutation / bootstrap test on the
+- [x] **5. Statistical significance.** Permutation / bootstrap test on the
   analyst's R distribution vs random-entry; report p-value and confidence
   interval. Save `results/significance.json`. Reality check on any apparent edge.
 - [ ] **6. Regime-conditional analyst tuning.** Measure analyst performance by
@@ -39,4 +39,5 @@ Status keys: [ ] todo · [~] in progress · [x] done
   direction), data span, and limitations.
 
 ## Log
+- #5 significance.py — bootstrap + sign-flip permutation test; correctly distinguishes edge vs noise; real scorecard (n=43) mean R -0.35, p=0.134 -> NOT significant (no proven direction edge).
 - (sessions append one line per completed item here)

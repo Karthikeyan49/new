@@ -48,6 +48,9 @@ def main():
     card = scorecard(calls, df=df)
     os.makedirs(RESULTS, exist_ok=True)
     save_scorecard(calls, os.path.join(RESULTS, "scorecard.json"), df=df)
+    # per-trade dump so significance.py can use the true R series
+    with open(os.path.join(RESULTS, "calls.json"), "w") as fh:
+        json.dump([c.as_row() for c in calls], fh, default=str)
 
     print("\n===== HONEST SCORECARD =====")
     for k in ("n_snapshots", "n_trades", "abstain_rate", "hit_rate",
