@@ -1,0 +1,57 @@
+{
+  "data_span": "2016-01-04 -> 2026-07-22 (10.6y, 3.27M 1-min bars)",
+  "decisions": 1500,
+  "trades": 553,
+  "abstain_rate": 0.631,
+  "direction": {
+    "hit_rate": 0.497,
+    "confident_hit_rate": 0.567,
+    "avg_R": -0.142,
+    "profit_factor": 0.672,
+    "cost_adjusted_total_R": -78.57,
+    "calibration": {
+      "3-4": {
+        "n": 317,
+        "win_rate": 0.479,
+        "avg_R": -0.143
+      },
+      "5-6": {
+        "n": 176,
+        "win_rate": 0.506,
+        "avg_R": -0.179
+      },
+      "7-8": {
+        "n": 53,
+        "win_rate": 0.547,
+        "avg_R": -0.044
+      },
+      "9-10": {
+        "n": 7,
+        "win_rate": 0.714,
+        "avg_R": 0.08
+      }
+    }
+  },
+  "baselines": {
+    "buy_and_hold_return_pct": 202.55,
+    "always_flat_total_R": 0.0,
+    "random_direction_note": "\u2248 coin flip; analyst does not beat it"
+  },
+  "significance": {
+    "n_trades": 553,
+    "mean_R": -0.1420752912859333,
+    "ci95": [
+      -0.226710940653737,
+      -0.054986909186575866
+    ],
+    "frac_mean_gt_0": 0.0007,
+    "p_value": 0.0010998900109989002,
+    "sharpe_like": -0.13743955993651788,
+    "annualized_note": "sharpe (per-trade) = -0.137; annualised-ish ~ -2.18 if ~252 trades/yr (x sqrt(N)) \u2014 indicative only",
+    "label": "NEGATIVE EDGE",
+    "verdict": "n=553, mean R -0.14, 95% CI [-0.23, -0.05], p=0.001, sharpe -0.14 -> SIGNIFICANT but LOSING (a real anti-edge)",
+    "alpha": 0.05,
+    "scipy_ttest_p": 0.0013024836182464043
+  },
+  "verdict": "Direction: 553 trades, hit 49.7%, avg -0.142R, cost-adjusted -78.6R, n=553, mean R -0.14, 95% CI [-0.23, -0.05], p=0.001, sharpe -0.14 -> SIGNIFICANT but LOSING (a real anti-edge). No exploitable directional edge. Volatility is the predictable target (see volatility.json, R2=0.54)."
+}

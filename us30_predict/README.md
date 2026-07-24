@@ -9,7 +9,8 @@ over 10.6 years of 1-minute data and scores its own calls honestly.**
 > **Bottom line, proven with data:** the analyst reasons like a competent human
 > and abstains ~60% of the time — but its **directional calls have no exploitable
 > edge on US30** (walk-forward cost-adjusted **−78.6R**, positive in only 2 of 11
-> years; meta-label OOS AUC **0.500**; significance **p≈0.13**). What *is*
+> years; meta-label OOS AUC **0.500**; on the full 553-trade series the loss is
+> statistically significant, **p=0.001** — a real anti-edge). What *is*
 > genuinely predictable is **volatility** (walk-forward OOS **R² 0.54**). This is
 > the honest fingerprint of a near-efficient market: *direction ≈ random, size
 > ≈ forecastable.*
@@ -88,7 +89,11 @@ full 10.6-year data:
 | Calibration | win-rate flat across confidence buckets, below break-even | confidence ≠ skill |
 | Meta-labeling filter | OOS **AUC 0.500** | nothing learnable to filter on |
 | Regime adaptation | OOS baseline −0.12R vs adapted −0.19R | doesn't generalize |
-| Significance | mean R −0.35, **p ≈ 0.13** | not statistically significant |
+| Significance (n=553) | mean R −0.14, 95% CI [−0.23, −0.05], **p=0.001** | significantly *losing* after costs |
+
+**Reality check:** over the same 10.6 years, **buy-and-hold returned +202%** —
+passively holding the index vastly outperformed the analyst's active trading
+(−78.6R). Definitive scorecard: `results/final_scorecard.json`.
 
 **Volatility (the predictable target)** — walk-forward, 6 folds, 24k OOS samples:
 
