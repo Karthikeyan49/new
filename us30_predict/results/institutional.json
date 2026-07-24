@@ -1,0 +1,68 @@
+{
+  "data_span": "2016-01-05 -> 2026-07-22 (2626 trading days)",
+  "cost_per_trade_pts": 2.0,
+  "annual_overnight_vs_intraday": {
+    "overnight_total_%": 40.4,
+    "intraday_total_%": 50.9,
+    "insight": "if overnight >> intraday, the index earns its return overnight (the night effect)"
+  },
+  "strategies": {
+    "buy_hold": {
+      "strategy": "buy_and_hold",
+      "total_return_pct": 204.8,
+      "CAGR_pct": 11.29,
+      "sharpe": 0.73,
+      "max_drawdown_pct": 37.3,
+      "n_trades": 1
+    },
+    "overnight": {
+      "strategy": "overnight_only",
+      "total_return_pct": 40.4,
+      "CAGR_pct": 3.31,
+      "sharpe": 0.35,
+      "max_drawdown_pct": 33.4,
+      "n_trades": 2626
+    },
+    "intraday": {
+      "strategy": "intraday_only",
+      "total_return_pct": 50.9,
+      "CAGR_pct": 4.03,
+      "sharpe": 0.38,
+      "max_drawdown_pct": 19.7,
+      "n_trades": 2626
+    },
+    "trend_long": {
+      "strategy": "trend_filtered_long",
+      "total_return_pct": 84.8,
+      "CAGR_pct": 6.07,
+      "sharpe": 0.6,
+      "max_drawdown_pct": 18.4,
+      "n_trades": 79
+    },
+    "overnight_trend": {
+      "strategy": "overnight_plus_trend",
+      "total_return_pct": 64.4,
+      "CAGR_pct": 4.89,
+      "sharpe": 0.73,
+      "max_drawdown_pct": 11.5,
+      "n_trades": 1989
+    },
+    "vol_target": {
+      "strategy": "vol_targeted_long",
+      "total_return_pct": 150.6,
+      "CAGR_pct": 9.21,
+      "sharpe": 0.84,
+      "max_drawdown_pct": 17.7,
+      "n_trades": 576
+    },
+    "intelligent": {
+      "strategy": "intelligent_trend_x_voltarget",
+      "total_return_pct": 92.7,
+      "CAGR_pct": 6.5,
+      "sharpe": 0.69,
+      "max_drawdown_pct": 19.5,
+      "n_trades": 550
+    }
+  },
+  "verdict": "Best risk-adjusted: vol_targeted_long (Sharpe 0.84, CAGR 9.21%, maxDD 17.7%). vs buy&hold Sharpe 0.73, maxDD 37.3%."
+}

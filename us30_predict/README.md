@@ -118,6 +118,30 @@ Rigorous tests over all **3.27M bars** to find any directional edge the discreti
 
 **Improvement verdict:** the one fixable flaw is the reward:risk geometry, and fixing it removes the *excess* bleed — but because direction is a **proven random walk**, no RR / exit / timing change creates positive expectancy after costs. The exhaustive conclusion stands: **US30 intraday direction cannot be traded profitably; the only real edge is volatility (R² 0.54).**
 
+## Institutional strategies — what professionals actually do (`results/institutional.json`)
+
+Since intraday *direction* is unpredictable, the professional edge is **risk
+management and risk-premia harvesting, not prediction.** Backtested on US30
+2016–2026 (daily, cost-adjusted):
+
+| Strategy | Return | CAGR | Sharpe | Max DD |
+|---|--:|--:|--:|--:|
+| Buy & hold | +205% | 11.3% | 0.73 | −37% |
+| Overnight-only (night effect) | +40% | 3.3% | 0.35 | −33% |
+| Intraday-only | +51% | 4.0% | 0.38 | −20% |
+| Trend-filtered long (200d MA) | +85% | 6.1% | 0.60 | −18% |
+| Overnight + trend | +64% | 4.9% | 0.73 | −12% |
+| **Vol-targeted long** | **+151%** | **9.2%** | **0.84** | **−18%** |
+| Intelligent (trend × vol-target) | +93% | 6.5% | 0.69 | −20% |
+
+**Findings:** (1) the documented overnight "night effect" **did not survive costs**
+on this sample. (2) The real institutional win is **volatility targeting** — best
+Sharpe (**0.84** vs 0.73) and **half** the max drawdown of buy-hold (−18% vs −37%),
+capturing most of the return. (3) A 200-day trend filter also halves drawdown.
+(4) Combining them didn't beat vol-targeting alone. Professionals beat buy-hold on
+a **risk-adjusted** basis by *managing exposure to the equity risk premium*, not by
+predicting direction. Chart: `results/institutional_equity.svg`.
+
 ## What this proves
 
 1. **A more "human-like" or "intelligent" system does not beat a near-random
