@@ -107,6 +107,17 @@ Charts in `results/`: `equity_curve.svg`, `calibration.svg`, `yearly_R.svg`,
 `volatility_r2.svg`. Human-like reasoning transcripts in
 `results/llm_reasoning_samples.md`.
 
+## Predictability audit (the "improve it" pass — `results/predictability_audit.json`)
+
+Rigorous tests over all **3.27M bars** to find any directional edge the discretionary analyst missed:
+
+- **Why it loses:** 276 win / 185 loss / 92 timeout; avg win **+0.59R** vs avg loss **−0.87R** → **implied reward:risk 0.67** (targets sit closer than stops). Wins and losses are ~equally frequent, but wins are smaller → negative expectancy. A *fixable geometry* flaw — but see the verdict.
+- **Return autocorrelation:** ≈ 0 at every horizon (1–60 min, all |ρ| < 0.007) → past returns carry no directional information.
+- **Variance-ratio random-walk test (Lo-MacKinlay):** VR 0.96–0.99, z ≈ −2.0 to −2.4 → a *statistically* detectable but *economically tiny* mean-reversion; US30 is a near-perfect random walk.
+- **Mechanical rules (out-of-sample, cost-adjusted):** momentum **and** reversion at 5/15/30/60-min all **lose** (~−0.6 bp/trade, negative Sharpe) — the faint reversion signal is smaller than the spread.
+
+**Improvement verdict:** the one fixable flaw is the reward:risk geometry, and fixing it removes the *excess* bleed — but because direction is a **proven random walk**, no RR / exit / timing change creates positive expectancy after costs. The exhaustive conclusion stands: **US30 intraday direction cannot be traded profitably; the only real edge is volatility (R² 0.54).**
+
 ## What this proves
 
 1. **A more "human-like" or "intelligent" system does not beat a near-random
